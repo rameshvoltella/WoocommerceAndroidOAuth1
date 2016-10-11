@@ -115,7 +115,6 @@ WoocommerceAndroidOAuth1: how to use
          signature=Encodeurl(signature);
          
 ```
-
 5. Generate Signature (using generate baseString and COSTUMER_SECRET)
   
     ```java
@@ -124,8 +123,7 @@ WoocommerceAndroidOAuth1: how to use
      
         //Signature is encoded before parsing (ONLY FOR THIS EXAMPLE, NOT NECESSARY FOR LIB LIKE RETROFIT,OKHTTP)
          signature=Encodeurl(signature);
-         
-```
+      ```
 
 
 
