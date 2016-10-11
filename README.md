@@ -108,6 +108,33 @@ WoocommerceAndroidOAuth1: how to use
 ```
 
 
+3.  Generate Base String (which is used to generate signatuekey)
+  
+    ```java
+
+          String BASE_SITE = "yoursitename.com";
+          String BASE_URL = "http://"+BASE_SITE+"/wp-json/wc/v1/products";
+          String COSTUMER_KEY = "costumer key here";
+          String COSTUMER_SECRET = "costumer secret here";
+          String METHORD="GET";//change API method eg POST,PUT, DELETE etc (ONLY FOR THIS EXAMPLE FOR LIB LIKE RETROFIT,OKHTTP, The Are Dynamic Way)
+
+          String firstEncodedString =METHORD+"&"+Encodeurl(BASE_URL);
+          Log.d("firstEncodedString",firstEncodedString);
+
+        String parameterString="oauth_consumer_key="+COSTUMER_KEY+"&oauth_nonce="+nonce+"&oauth_signature_method=HMAC-SHA1&oauth_timestamp="+timestamp+"&oauth_version=1.0";
+        
+        String secoundEncodedString="&"+Encodeurl(parameterString);
+
+        Log.d("secoundEncodedString",secoundEncodedString);
+
+        //The base String is used to generate signature
+        String baseString=firstEncodedString+secoundEncodedString;
+
+         
+```
+
+
+
 4. Generate Signature (using generate baseString and COSTUMER_SECRET)
   
     ```java
