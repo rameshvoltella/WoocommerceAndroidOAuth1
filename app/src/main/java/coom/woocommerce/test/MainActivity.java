@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("nonce",nonce);
         Log.d("time",timestamp);
 
-        String firstEncodedString =METHORD+"&"+Encodeurl(BASE_URL);
+        String firstEncodedString =METHORD+"&"+encodeUrl(BASE_URL);
         Log.d("firstEncodedString",firstEncodedString);
 
         String parameterString="oauth_consumer_key="+COSTUMER_KEY+"&oauth_nonce="+nonce+"&oauth_signature_method=HMAC-SHA1&oauth_timestamp="+timestamp+"&oauth_version=1.0";
-        String secoundEncodedString="&"+Encodeurl(parameterString);
+        String secoundEncodedString="&"+encodeUrl(parameterString);
 
         Log.d("secoundEncodedString",secoundEncodedString);
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("SignatureBefore",signature);
 
         //Signature is encoded before parsing (ONLY FOR THIS EXAMPLE NOT NECESSARY FOR LIB LIKE RETROFIT,OKHTTP)
-        signature=Encodeurl(signature);
+        signature=encodeUrl(signature);
 
         Log.d("SignatureAfter ENCODING",signature);
 
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public String Encodeurl(String url)
+    public String encodeUrl(String url)
     {
         String encodedurl="";
         try {

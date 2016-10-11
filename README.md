@@ -3,6 +3,8 @@ WoocommerceAndroidOAuth1 -Android
 
 This is a sample application which show how to use whocommerce using OAuth 1.0a “one-legged” authentication(HTTP).
 
+
+
 Using the WooCommerce REST API 
 
 There are two ways to authenticate with the API, the easy way (over HTTPS) or the hard way (over plain HTTP using OAuth).
@@ -92,12 +94,12 @@ WoocommerceAndroidOAuth1: how to use
           String COSTUMER_SECRET = "costumer secret here";
           String METHORD="GET";//change API method eg POST,PUT, DELETE etc (ONLY FOR THIS EXAMPLE FOR LIB LIKE RETROFIT,OKHTTP, The Are Dynamic Way)
 
-          String firstEncodedString =METHORD+"&"+Encodeurl(BASE_URL);
+          String firstEncodedString =METHORD+"&"+encodeUrl(BASE_URL);
           Log.d("firstEncodedString",firstEncodedString);
 
         String parameterString="oauth_consumer_key="+COSTUMER_KEY+"&oauth_nonce="+nonce+"&oauth_signature_method=HMAC-SHA1&oauth_timestamp="+timestamp+"&oauth_version=1.0";
         
-        String secoundEncodedString="&"+Encodeurl(parameterString);
+        String secoundEncodedString="&"+encodeUrl(parameterString);
 
         Log.d("secoundEncodedString",secoundEncodedString);
 
@@ -112,7 +114,7 @@ WoocommerceAndroidOAuth1: how to use
          String signature=new HMACSha1SignatureService().getSignature(baseString,COSTUMER_SECRET,"");
      
         //Signature is encoded before parsing (ONLY FOR THIS EXAMPLE, NOT NECESSARY FOR LIB LIKE RETROFIT,OKHTTP)
-         signature=Encodeurl(signature);
+         signature=encodeUrl(signature);
       ```
 
 5. Generate Url  (url after generated signature)
@@ -125,6 +127,27 @@ WoocommerceAndroidOAuth1: how to use
      
         
       ```
+
+encodeUrl methord is as follow
+
+```java
+
+public String encodeUrl(String url)
+    {
+        String encodedurl="";
+        try {
+
+            encodedurl = URLEncoder.encode(url,"UTF-8");
+            Log.d("Encodeurl", encodedurl);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        return encodedurl;
+    }
+```
+
+([FULL SOURCE CODE ](https://github.com/rameshvoltella/WoocommerceAndroidOAuth1/blob/master/app/src/main/java/coom/woocommerce/test/MainActivity.java))
 
   
 
@@ -296,7 +319,7 @@ do the rest of the retrofit fuctions
 
 
 
-
+A Big Thanks to  ([scribe:1.3.5](http://grepcode.com/snapshot/repo1.maven.org/maven2/org.scribe/scribe/1.3.5)) library which help me referring and guide to generate correct signature of OAUTH
 
 
 
