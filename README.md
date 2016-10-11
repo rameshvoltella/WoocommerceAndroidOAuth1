@@ -137,11 +137,11 @@ its very easy to integrate this library to retrofit write a interceptor
 
  ```java
          
-          public class OAuthInterceptor implements Interceptor {
+    public class OAuthInterceptor implements Interceptor {
 
-          private static final String OAUTH_CONSUMER_KEY = "oauth_consumer_key";
-          private static final String OAUTH_NONCE = "oauth_nonce";
-          private static final String OAUTH_SIGNATURE = "oauth_signature";
+    private static final String OAUTH_CONSUMER_KEY = "oauth_consumer_key";
+    private static final String OAUTH_NONCE = "oauth_nonce";
+    private static final String OAUTH_SIGNATURE = "oauth_signature";
     private static final String OAUTH_SIGNATURE_METHOD = "oauth_signature_method";
     private static final String OAUTH_SIGNATURE_METHOD_VALUE = "HMAC-SHA1";
     private static final String OAUTH_TIMESTAMP = "oauth_timestamp";
@@ -176,9 +176,9 @@ its very easy to integrate this library to retrofit write a interceptor
         Request original = chain.request();
         HttpUrl originalHttpUrl = original.url();
 
-//        Log.d("INTER URL",original.url().toString());
+//        Log.d("URL",original.url().toString());
 //
-//        Log.d("INTER URL",original.method());
+//        Log.d("method",original.method());
 
         ////////////////////////////////////////////////////////////
 
@@ -204,7 +204,6 @@ its very easy to integrate this library to retrofit write a interceptor
 
                 .addQueryParameter(OAUTH_SIGNATURE_METHOD,OAUTH_SIGNATURE_METHOD_VALUE)
                 .addQueryParameter(OAUTH_CONSUMER_KEY,consumerKey)
-//                .addQueryParameter("scope","*")
                 .addQueryParameter(OAUTH_VERSION,OAUTH_VERSION_VALUE)
                 .addQueryParameter(OAUTH_TIMESTAMP ,timestamp)
                 .addQueryParameter(OAUTH_NONCE,nonce)
@@ -223,6 +222,7 @@ its very easy to integrate this library to retrofit write a interceptor
 
 
     public static final class Builder {
+        
         private String consumerKey;
         private String consumerSecret;
 
@@ -240,10 +240,10 @@ its very easy to integrate this library to retrofit write a interceptor
 
 
         public OAuthInterceptor build() {
-            if (consumerKey == null) throw new IllegalStateException("consumerKey not set");
+           
+ if (consumerKey == null) throw new IllegalStateException("consumerKey not set");
             if (consumerSecret == null) throw new IllegalStateException("consumerSecret not set");
-//            if (accessToken == null) throw new IllegalStateException("accessToken not set");
-//            if (accessSecret == null) throw new IllegalStateException("accessSecret not set");
+
             return new OAuthInterceptor(consumerKey, consumerSecret);
         }
     }
