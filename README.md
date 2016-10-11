@@ -120,22 +120,6 @@ WoocommerceAndroidOAuth1: how to use
 
 
 
-
-
-
-
-
-   
-     
-
-
-
-
-
-
-
-
-
 ## License
 
     The MIT License (MIT)
