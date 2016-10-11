@@ -117,7 +117,9 @@ WoocommerceAndroidOAuth1: how to use
 ```
 5. Generate Signature (using generate baseString and COSTUMER_SECRET)
   
-    ```java
+     
+
+```java
 
          String signature=new HMACSha1SignatureService().getSignature(baseString,COSTUMER_SECRET,"");
      
