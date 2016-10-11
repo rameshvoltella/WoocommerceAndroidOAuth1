@@ -116,7 +116,7 @@ WoocommerceAndroidOAuth1: how to use
          
 ```
 
-4. Generate Signature (using generate baseString and COSTUMER_SECRET)
+5. Generate Signature (using generate baseString and COSTUMER_SECRET)
   
     ```java
 
@@ -127,12 +127,12 @@ WoocommerceAndroidOAuth1: how to use
          
 ```
 
-5. Generate URL with signature (Use this url to authenitcate (USE ANY API METHORDS))
-  
-    ```java
 
-        String parseUrl=BASE_URL+"?oauth_signature_method=HMAC-SHA1&oauth_consumer_key="+COSTUMER_KEY+"&oauth_version=1.0&oauth_timestamp="+timestamp+"&oauth_nonce="+nonce+"&oauth_signature="+ signature;
-```
+
+
+
+
+
    
      
 
