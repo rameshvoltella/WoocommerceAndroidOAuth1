@@ -115,12 +115,12 @@ WoocommerceAndroidOAuth1: how to use
          signature=Encodeurl(signature);
          
 ```
-5. Generate kola
+
   
 
 
 
-## License
+### License
 
     The MIT License (MIT)
 
