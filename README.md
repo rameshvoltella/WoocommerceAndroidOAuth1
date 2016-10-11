@@ -262,10 +262,7 @@ its very easy to integrate this library to retrofit write a interceptor
         return encodedurl;
     }
 }
-
-     
-        
-      ```
+```
 
 
 
