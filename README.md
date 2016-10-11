@@ -190,8 +190,8 @@ its very easy to integrate this library to retrofit write a interceptor
         String firstBaseString=original.method()+"&"+urlEncoded(original.url().toString());
         Log.d("firstBaseString",firstBaseString);
 
-        String newgeneration="oauth_consumer_key="+consumerKey+"&oauth_nonce="+nonce+"&oauth_signature_method=HMAC-SHA1&oauth_timestamp="+timestamp+"&oauth_version=1.0";
-        String secoundBaseString="&"+urlEncoded(newgeneration);
+        String generatedBaseString="oauth_consumer_key="+consumerKey+"&oauth_nonce="+nonce+"&oauth_signature_method=HMAC-SHA1&oauth_timestamp="+timestamp+"&oauth_version=1.0";
+        String secoundBaseString="&"+urlEncoded(generatedBaseString);
 
 
 
