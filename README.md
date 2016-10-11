@@ -270,12 +270,20 @@ its very easy to integrate this library to retrofit write a interceptor
 
 ```java
 
+
+ OAuthInterceptor oauth1Woocommerce = new OAuthInterceptor.Builder()
+                .consumerKey(CUSTOMER_KEY_HERE)
+                .consumerSecret(CUSTOMER_SECERT_HERE)
+                .build();
+
  HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             OkHttpClient client = new OkHttpClient.Builder()
                     .connectTimeout(20, TimeUnit.SECONDS)
                     .writeTimeout(20, TimeUnit.SECONDS)
-                    .readTimeout(30, TimeUnit.SECONDS).addInterceptor(interceptor).addInterceptor(oauth1)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .addInterceptor(interceptor)
+                    .addInterceptor(oauth1Woocommerce)// Interceptor oauth1Woocommerce added
                     .build();
 
             mRetrofit = new Retrofit.Builder()
@@ -283,6 +291,8 @@ its very easy to integrate this library to retrofit write a interceptor
                     .client(client)
                     .build();
 ```
+
+do the rest of the retrofit fuctions
 
 
 
