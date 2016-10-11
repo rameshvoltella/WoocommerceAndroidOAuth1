@@ -5,8 +5,9 @@ This is a sample application which show how to use whocommerce using OAuth 1.0a 
 
 This library is based on woocommerce api v1[woocommerce-rest-api-docs](http://woocommerce.github.io/woocommerce-rest-api-docs/#introduction) 
 
-API Version 	WC Version 	WP Version
- v1 	      2.6.x or later 	4.4 or later
+API Version - v1  		
+WC Version - 2.6.x or later 	
+WP Version - 4.4 or later
 
 
 Using the WooCommerce REST API 
