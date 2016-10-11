@@ -82,7 +82,7 @@ WoocommerceAndroidOAuth1: how to use
          String timestamp=new TimestampServiceImpl().getTimestampInSeconds();
 ```
 
-3.  Generate Base String (which is used to generate signatuekey)
+3. Generate Base String (which is used to generate signatuekey)
   
     ```java
 
@@ -106,17 +106,9 @@ WoocommerceAndroidOAuth1: how to use
 
          
 ```
+
 4. Generate Signature (using generate baseString and COSTUMER_SECRET)
-  
-    ```java
-
-         String signature=new HMACSha1SignatureService().getSignature(baseString,COSTUMER_SECRET,"");
      
-        //Signature is encoded before parsing (ONLY FOR THIS EXAMPLE, NOT NECESSARY FOR LIB LIKE RETROFIT,OKHTTP)
-         signature=Encodeurl(signature);
-         
-```
-
 
 
 
