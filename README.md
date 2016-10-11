@@ -103,10 +103,10 @@ WoocommerceAndroidOAuth1: how to use
 
         //The base String is used to generate signature
         String baseString=firstEncodedString+secoundEncodedString;
-
-         
 ```
      
+
+
 
 
 
