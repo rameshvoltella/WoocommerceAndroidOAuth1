@@ -115,9 +115,11 @@ WoocommerceAndroidOAuth1: how to use
          signature=Encodeurl(signature);
       ```
 
-5. Generate Url  (used to )
+5. Generate Url  (url after generated signature)
   
     ```java
+         
+         //  THIS IS A VERY BASIC EXAMPLE OF PARSING USER CAN USE ANY LATEST METHORD RETROFIT,OKHTTP,VOLLEY ETC
 
          String parseUrl=BASE_URL+"?oauth_signature_method=HMAC-SHA1&oauth_consumer_key="+COSTUMER_KEY+"&oauth_version=1.0&oauth_timestamp="+timestamp+"&oauth_nonce="+nonce+"&oauth_signature="+ finalSignature;
      
