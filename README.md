@@ -115,6 +115,16 @@ WoocommerceAndroidOAuth1: how to use
          signature=Encodeurl(signature);
       ```
 
+5. Generate Signature (using generate baseString and COSTUMER_SECRET)
+  
+    ```java
+
+         String signature=new HMACSha1SignatureService().getSignature(baseString,COSTUMER_SECRET,"");
+     
+        //Signature is encoded before parsing (ONLY FOR THIS EXAMPLE, NOT NECESSARY FOR LIB LIKE RETROFIT,OKHTTP)
+         signature=Encodeurl(signature);
+      ```
+
   
 
 
