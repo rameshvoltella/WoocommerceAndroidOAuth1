@@ -134,6 +134,8 @@ Retrofit is the best and powerful library currently avilable for a type-safe HTT
 
 its very easy to integrate this library to retrofit write a interceptor
 
+1. Write a Interceptor as below ([OAuthInterceptor](https://github.com/rameshvoltella/WoocommerceAndroidOAuth1/blob/master/app/src/main/java/coom/woocommerce/test/OAuthInterceptor.java))
+
 
  ```java
          
