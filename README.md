@@ -104,6 +104,25 @@ WoocommerceAndroidOAuth1: how to use
         //The base String is used to generate signature
         String baseString=firstEncodedString+secoundEncodedString;
 ```
+
+4. Generate Signature (using generate baseString and COSTUMER_SECRET)
+  
+    ```java
+
+         String signature=new HMACSha1SignatureService().getSignature(baseString,COSTUMER_SECRET,"");
+     
+        //Signature is encoded before parsing (ONLY FOR THIS EXAMPLE, NOT NECESSARY FOR LIB LIKE RETROFIT,OKHTTP)
+         signature=Encodeurl(signature);
+         
+```
+
+5. Generate URL with signature (Use this url to authenitcate (USE ANY API METHORDS))
+  
+    ```java
+
+         String parseUrl=BASE_URL+"?oauth_signature_method=HMAC-SHA1&oauth_consumer_key="+COSTUMER_KEY+"&oauth_version=1.0&oauth_timestamp="+timestamp+"&oauth_nonce="+nonce+"&oauth_signature="+ signature;
+```
+   
      
 
 
