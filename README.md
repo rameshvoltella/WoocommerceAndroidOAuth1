@@ -108,7 +108,7 @@ WoocommerceAndroidOAuth1: how to use
 ```
 
 
-4.  Generate Signature (using generate baseString and COSTUMER_SECRET)
+4. Generate Signature (using generate baseString and COSTUMER_SECRET)
   
     ```java
 
