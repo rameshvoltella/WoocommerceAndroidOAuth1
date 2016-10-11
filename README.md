@@ -266,6 +266,24 @@ its very easy to integrate this library to retrofit write a interceptor
 }
 ```
 
+2. AddInteceptor into Retrofit Methord
+
+```java
+
+ HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .connectTimeout(20, TimeUnit.SECONDS)
+                    .writeTimeout(20, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS).addInterceptor(interceptor).addInterceptor(oauth1)
+                    .build();
+
+            mRetrofit = new Retrofit.Builder()
+                    .baseUrl(url).addConverterFactory(GsonConverterFactory.create())
+                    .client(client)
+                    .build();
+```
+
 
 
 
