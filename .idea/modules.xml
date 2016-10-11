@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/woocommerseAndroidOAuth1Sample.iml" filepath="$PROJECT_DIR$/woocommerseAndroidOAuth1Sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/woocommerseandroidoauth1library/woocommerseandroidoauth1library.iml" filepath="$PROJECT_DIR$/woocommerseandroidoauth1library/woocommerseandroidoauth1library.iml" />
+    </modules>
+  </component>
+</project>
