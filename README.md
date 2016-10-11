@@ -113,14 +113,19 @@ WoocommerceAndroidOAuth1: how to use
      
         //Signature is encoded before parsing (ONLY FOR THIS EXAMPLE, NOT NECESSARY FOR LIB LIKE RETROFIT,OKHTTP)
          signature=Encodeurl(signature);
-         
-```
+      ```
 
   
 
 
 
-### License
+
+
+
+
+
+
+## License
 
     The MIT License (MIT)
 
