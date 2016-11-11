@@ -48,8 +48,6 @@ public class OAuthInterceptor  {
     private final String consumerKey;
     private final String consumerSecret;
 
-    public static final int SIGN_LAST = 1001;
-    public static final int SIGN_FIRST = 1002;
 
     private OAuthInterceptor(String consumerKey, String consumerSecret) {
         this.consumerKey = consumerKey;
@@ -93,13 +91,11 @@ public class OAuthInterceptor  {
             generatedBaseString = "oauth_consumer_key=" + consumerKey + "&oauth_nonce=" + nonce + "&oauth_signature_method=HMAC-SHA1&oauth_timestamp=" + timestamp + "&oauth_version=1.0";
 
         }
-//        }
 
         ParameterList result = new ParameterList();
         result.addQuerystring(generatedBaseString);
         generatedBaseString=result.sort().asOauthBaseString();
         Log.d("Sorted","00--"+result.sort().asOauthBaseString());
-//        String generatedBaseString = original.url().encodedQuery()+"&oauth_consumer_key=" + consumerKey + "&oauth_nonce=" + nonce + "&oauth_signature_method=HMAC-SHA1&oauth_timestamp=" + timestamp + "&oauth_version=1.0";
 
         String secoundBaseString = "&" + generatedBaseString;
 
