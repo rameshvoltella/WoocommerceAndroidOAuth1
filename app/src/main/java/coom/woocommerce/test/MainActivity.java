@@ -24,10 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final String BASE_SITE = "yoursitename.com";
+       /* final String BASE_SITE = "yoursitename.com";
         final String BASE_URL = "http://"+BASE_SITE+"/wp-json/wc/v1/products";
         final String COSTUMER_KEY = "costumer key here";
-        String COSTUMER_SECRET = "costumer secret here";
+        String COSTUMER_SECRET = "costumer secret here";*/
+
+        final String BASE_SITE = "androidmill.com";
+        final String BASE_URL = "http://"+BASE_SITE+"/wp-json/wc/v1/products";
+        final String COSTUMER_KEY="ck_7081efc222e724c72aee854b56de443a4dae9251";
+        String COSTUMER_SECRET ="cs_e35e69b5c43ba794e756507557f6f16ba6c7801e";
 
         String METHORD="GET";//change API method eg POST,PUT, DELETE etc (ONLY FOR THIS EXAMPLE FOR LIB LIKE RETROFIT,OKHTTP, The Are Dynamic Way)
 
@@ -69,8 +74,10 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 //  THIS IS A VERY BASIC EXAMPLE OF PARSING USER CAN USE ANY LATEST METHORD RETROFIT,OKHTTP,VOLLEY ETC
+                String filterid="filter[categories]=gedgets";
+                filterid=encodeUrl(filterid);
 
-                String parseUrl=BASE_URL+"?oauth_signature_method=HMAC-SHA1&oauth_consumer_key="+COSTUMER_KEY+"&oauth_version=1.0&oauth_timestamp="+timestamp+"&oauth_nonce="+nonce+"&oauth_signature="+ finalSignature;
+                String parseUrl=BASE_URL+"?"+filterid+"&oauth_signature_method=HMAC-SHA1&oauth_consumer_key="+COSTUMER_KEY+"&oauth_version=1.0&oauth_timestamp="+timestamp+"&oauth_nonce="+nonce+"&oauth_signature="+ finalSignature;
 
                getJSON(parseUrl);
 
@@ -110,10 +117,11 @@ public class MainActivity extends AppCompatActivity {
 //            c.setReadTimeout(timeout);
             c.connect();
             int status = c.getResponseCode();
+
             Log.d("staus",""+status);
             switch (status) {
                 case 200:
-                case 201:
+                case 401:
                     BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream()));
                     StringBuilder sb = new StringBuilder();
                     String line;

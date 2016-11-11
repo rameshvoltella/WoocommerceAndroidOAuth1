@@ -1,7 +1,7 @@
 package com.woocommerse.OAuth1.services;
 
 /**
- * This interface for nonce and timestamp
+ * This interfaces for nonce and timestamp
  */
 public interface TimestampService
 {
