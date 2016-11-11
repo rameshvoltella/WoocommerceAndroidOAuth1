@@ -23,7 +23,7 @@ import java.net.URLEncoder;
 
 
 
-public class OAuthInterceptor  {
+public class OAuthInterceptor implements Interceptor {
 
     /*THIS CLASS CONTAIN ERROR ITS BECAUSE THIS APP DOES NOT IMPORTED THE RETROFIT LIBRARY*/
 

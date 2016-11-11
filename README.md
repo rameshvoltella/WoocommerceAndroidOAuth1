@@ -167,7 +167,7 @@ its very easy to integrate this library to retrofit write a interceptor
 
  ```java
          
-    public class OAuthInterceptor  {
+    public class OAuthInterceptor implements Interceptor {
 
     /*THIS CLASS CONTAIN ERROR ITS BECAUSE THIS APP DOES NOT IMPORTED THE RETROFIT LIBRARY*/
 
